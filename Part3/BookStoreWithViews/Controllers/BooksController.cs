@@ -6,11 +6,9 @@ using BookStoreWithViews.Models;
 
 namespace BookStoreWithViews.Controllers
 {
-    public class BooksController : Controller
-    {
+    public class BooksController : Controller    {
         // GET: Books
-        public ActionResult Index()
-        {
+        public ActionResult Index()        {
             IEnumerable<Book> books = GetBooks();
             return View(books);
         }
@@ -31,8 +29,7 @@ namespace BookStoreWithViews.Controllers
         // POST: Books/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind("Id,Title,Genre,Price,PublishDate")] Book book)
-        {
+        public ActionResult Create([Bind("Id,Title,Genre,Price,PublishDate")] Book book)       {
             try
             {
                 // TODO: Add insert logic here
